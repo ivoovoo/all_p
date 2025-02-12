@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../Components/chart.dart';
+
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -27,13 +29,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
         currentIndex = (currentIndex + 1) % colors.length;
         colors = currentIndex == 0
             ? [
-                Color(0xFF0D023B),
-                Color(0xFF2a023b),
-              ]
+          Color(0xFF0D023B),
+          Color(0xFF2a023b),
+        ]
             : [
-                Color(0xFF2a023b),
-                Color(0xFF0D023B),
-              ];
+          Color(0xFF2a023b),
+          Color(0xFF0D023B),
+        ];
       });
       _startAnimation();
     });
@@ -53,14 +55,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
         child: Stack(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: [
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  Row(
+            Column(
+              children: [
+                const SizedBox(
+                  height: 50,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SvgPicture.asset('assets/Личнийкабинет.svg'),
@@ -82,166 +84,172 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       )
                     ],
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Stack(
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Stack(
+                  children: [
+                    Image.asset('assets/dizain.png'),
+                    const Positioned(
+                      top: 80,
+                      right: 80,
+                      child: Column(
+                        children: [
+                          Text(
+                            'USDT',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 14,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            '9.542',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 28,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  width: 270,
+                  height: 72,
+                  decoration: BoxDecoration(
+                      border: Border.all(width: 0.5, color: Colors.pink),
+                      borderRadius: BorderRadius.circular(25),
+                      color: const Color.fromRGBO(58, 129, 255, 0.08)),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset('assets/dizain.png'),
-                      const Positioned(
-                        top: 80,
-                        right: 80,
-                        child: Column(
-                          children: [
-                            Text(
-                              'USDT',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 14,
-                                color: Colors.white,
-                              ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          InkWell(
+                            child: Column(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      width: 1,
+                                      color: Colors.white,
+                                    ),
+                                    borderRadius: BorderRadius.circular(100),
+                                  ),
+                                  width: 23,
+                                  height: 23,
+                                  child: const Icon(
+                                    Icons.add,
+                                    size: 20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                SizedBox(height: 5,),
+                                const Text(
+                                  'Deposit',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 10,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
                             ),
-                            Text(
-                              '9.542',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 28,
-                                color: Colors.white,
-                              ),
+                            onTap: () {},
+                          ),
+                          InkWell(
+                            child: Column(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      width: 1,
+                                      color: Colors.white,
+                                    ),
+                                    borderRadius: BorderRadius.circular(100),
+                                  ),
+                                  width: 23,
+                                  height: 23,
+                                  child: const Icon(
+                                    Icons.currency_exchange,
+                                    size: 20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                SizedBox(height: 5,),
+
+                                const Text(
+                                  'Transfer',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 10,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
                             ),
-                          ],
-                        ),
+                            onTap: () {},
+                          ),
+                          InkWell(
+                            child: Column(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      width: 1,
+                                      color: Colors.white,
+                                    ),
+                                    borderRadius: BorderRadius.circular(100),
+                                  ),
+                                  width: 23,
+                                  height: 23,
+                                  child: const Icon(
+                                    Icons.arrow_upward,
+                                    size: 20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                SizedBox(height: 5,),
+
+                                const Text(
+                                  'Withdraw',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 10,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
+                            ),
+                            onTap: () {},
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    width: 270,
-                    height: 72,
-                    decoration: BoxDecoration(
-                        border: Border.all(width: 0.5, color: Colors.pink),
-                        borderRadius: BorderRadius.circular(25),
-                        color: const Color.fromRGBO(58, 129, 255, 0.08)),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            InkWell(
-                              child: Column(
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        width: 1,
-                                        color: Colors.white,
-                                      ),
-                                      borderRadius: BorderRadius.circular(100),
-                                    ),
-                                    width: 23,
-                                    height: 23,
-                                    child: const Icon(
-                                      Icons.add,
-                                      size: 20,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  const Text(
-                                    'Deposit',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 10,
-                                      color: Colors.white,
-                                    ),
-                                  )
-                                ],
-                              ),
-                              onTap: () {},
-                            ),
-                            InkWell(
-                              child: Column(
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        width: 1,
-                                        color: Colors.white,
-                                      ),
-                                      borderRadius: BorderRadius.circular(100),
-                                    ),
-                                    width: 23,
-                                    height: 23,
-                                    child: const Icon(
-                                      Icons.currency_exchange,
-                                      size: 20,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  const Text(
-                                    'Transfer',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 10,
-                                      color: Colors.white,
-                                    ),
-                                  )
-                                ],
-                              ),
-                              onTap: () {},
-                            ),
-                            InkWell(
-                              child: Column(
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        width: 1,
-                                        color: Colors.white,
-                                      ),
-                                      borderRadius: BorderRadius.circular(100),
-                                    ),
-                                    width: 23,
-                                    height: 23,
-                                    child: const Icon(
-                                      Icons.arrow_upward,
-                                      size: 20,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  const Text(
-                                    'Withdraw',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 10,
-                                      color: Colors.white,
-                                    ),
-                                  )
-                                ],
-                              ),
-                              onTap: () {},
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Image.asset(
-                    'assets/diagramm 2.png',
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  width: double.infinity,
+                  height: 400,
+                  child:LineChartSample2(),
+                ),
+              ],
             ),
             DraggableScrollableSheet(
-              initialChildSize: 0.3, // Начальный размер
-              minChildSize: 0.3, // Минимальный размер
+              initialChildSize: 0.33, // Начальный размер
+              minChildSize: 0.33, // Минимальный размер
               maxChildSize: 0.53, // Максимальный размер
               builder:
                   (BuildContext context, ScrollController scrollController) {
@@ -250,9 +258,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     gradient: LinearGradient(colors: [
                       Color.fromRGBO(56, 0, 99, 1),
                       Color.fromRGBO(34, 5, 51, 1),
-                    ],begin: Alignment.centerRight,end: Alignment.centerLeft),
+                    ], begin: Alignment.centerRight, end: Alignment.centerLeft),
                     borderRadius:
-                        BorderRadius.vertical(top: Radius.circular(30)),
+                    BorderRadius.vertical(top: Radius.circular(30)),
                   ),
                   child: SingleChildScrollView(
                     controller: scrollController,
@@ -297,7 +305,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   ],
                                 ),
                                 Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
                                     Text(
                                       '0.9587',
@@ -337,7 +345,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     ),
                                     Column(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           'Etherium',
@@ -360,6 +368,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   ],
                                 ),
                                 Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+
                                   children: [
                                     Text(
                                       '0.984',

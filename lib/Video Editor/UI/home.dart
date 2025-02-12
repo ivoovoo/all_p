@@ -52,27 +52,25 @@ class _HomeWidgetState extends State<HomeWidget> {
         backgroundColor: Colors.black,
         title: Row(
           children: [
-            SizedBox(
-              width: 10,
-            ),
-            Text('EIWQ',
+            Text('W',
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 30,
                     fontWeight: FontWeight.w600)),
           ],
         ),
+        titleSpacing: 20,
         actions: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 17),
             child: InkWell(
               onTap: _pickVideo,
 
               child: Container(
-                width: 107,
-                height: 100,
+                width: 117,
+                height: 110,
                 decoration: BoxDecoration(
-                  color: Color.fromRGBO(31, 31, 31, 1),
+                  color: Colors.white.withOpacity(0.08),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Center(
@@ -151,6 +149,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                       fontSize: 15,
                     ),
                   ),
+                  SizedBox(height: 5,),
                   Text(
                     listOfAuthors[index],
                     style: TextStyle(
@@ -212,6 +211,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                     fontSize: 15,
                   ),
                 ),
+                SizedBox(height: 5,),
                 Text(
                   '01.04.2012',
                   style: TextStyle(

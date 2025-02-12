@@ -2,8 +2,11 @@ import 'package:all_projects/Cryptology/widgets/main_bar.dart';
 import 'package:all_projects/Learning%20app/widgets/main_bar.dart';
 import 'package:flutter/material.dart';
 
+import '../../CLOUD/app.dart';
+import '../../MOVIES/App.dart';
 import '../../Market app/widgets/main_bar.dart';
 import '../../Taxi/screens/login_page.dart';
+import '../../VPS/app.dart';
 import '../../Video Editor/UI/home.dart';
 import '../../Wallet/Components/home_bar.dart';
 import '../../Wallet/Screens/wallet.dart';
@@ -260,6 +263,118 @@ class NavBar extends StatelessWidget {
                                           ),
                                           Text(
                                             'CRYPTOLOGY',
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 20,),
+                                Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    InkWell(
+                                      onTap: () {
+                                        Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => CloudApp()),
+                                        );
+                                      },
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            width: 100,
+                                            height: 100,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                              BorderRadius.circular(20),
+                                              gradient: LinearGradient(
+                                                colors: [Colors.orange, Colors.redAccent], // Цвета градиента
+                                                begin: Alignment.topLeft, // Начало градиента
+                                                end: Alignment.bottomRight, // Конец градиента
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text(
+                                            'CLOUD',
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => AppMovies()),
+                                        );
+                                      },
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            width: 100,
+                                            height: 100,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                              BorderRadius.circular(20),
+                                              gradient: LinearGradient(
+                                                colors: [Colors.lime, Colors.pink], // Цвета градиента
+                                                begin: Alignment.topLeft, // Начало градиента
+                                                end: Alignment.bottomRight, // Конец градиента
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text(
+                                            'MOVIE',
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => AppVps()),
+                                        );
+                                      },
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            width: 100,
+                                            height: 100,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                              BorderRadius.circular(20),
+                                              gradient: LinearGradient(
+                                                colors: [Colors.amberAccent, Colors.green], // Цвета градиента
+                                                begin: Alignment.topLeft, // Начало градиента
+                                                end: Alignment.bottomRight, // Конец градиента
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text(
+                                            'VPS',
                                             style: TextStyle(
                                               fontWeight: FontWeight.w400,
                                               fontSize: 14,

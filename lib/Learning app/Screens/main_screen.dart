@@ -25,10 +25,10 @@ class MainPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(
-                  Icons.menu,
-                  size: 30,
-                ),
+                Text('ENGLISH',style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 24,
+                ),),
                 Container(
                   width: 72,
                   height: 72,
@@ -40,15 +40,15 @@ class MainPage extends StatelessWidget {
                 ),
               ],
             ),
-            Text(
-              'Your\nLearnings',
-              style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 52,
-                color: Color.fromRGBO(117, 48, 39, 1),
-                fontFamily: 'Playfair',
-              ),
-            ),
+            // Text(
+            //   'Your\nLearnings',
+            //   style: TextStyle(
+            //     fontWeight: FontWeight.w700,
+            //     fontSize: 52,
+            //     color: Color.fromRGBO(117, 48, 39, 1),
+            //     fontFamily: 'Playfair',
+            //   ),
+            // ),
             SvgPicture.asset('assets/Vector 372.svg'),
             CustomSlidingSegmentedControl<int>(
               height: 47,
@@ -202,7 +202,7 @@ class MainPage extends StatelessWidget {
                                 width: 10,
                               ),
                               Text(
-                                '20 Courses',
+                                '1 Day',
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 16,

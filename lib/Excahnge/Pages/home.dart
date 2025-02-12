@@ -101,7 +101,7 @@ class _HomeScreenState extends State<HomeScreen>
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.symmetric(vertical: 16.0,horizontal: 8),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -239,7 +239,7 @@ class _HomeScreenState extends State<HomeScreen>
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 8),
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 28),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -290,6 +290,7 @@ class _HomeScreenState extends State<HomeScreen>
                     ),
                     Expanded(
                       child: ListView(
+                        padding: EdgeInsets.zero,
                         children: [
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 8),
