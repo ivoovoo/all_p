@@ -383,10 +383,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                             children: [
                                               InkWell(
                                                 onTap: () {
-                                                  Navigator.pushReplacement(
-                                                    context,
-                                                    MaterialPageRoute(builder: (context) => CloudApp()),
-                                                  );
+                                                  // Navigator.pushReplacement(
+                                                  //   context,
+                                                  //   MaterialPageRoute(builder: (context) => CloudApp()),
+                                                  // );
                                                 },
                                                 child: Column(
                                                   children: [

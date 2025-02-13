@@ -285,10 +285,10 @@ class NavBar extends StatelessWidget {
                                   children: [
                                     InkWell(
                                       onTap: () {
-                                        Navigator.pushReplacement(
-                                          context,
-                                          MaterialPageRoute(builder: (context) => CloudApp()),
-                                        );
+                                        // Navigator.pushReplacement(
+                                        //   context,
+                                        //   MaterialPageRoute(builder: (context) => CloudApp()),
+                                        // );
                                       },
                                       child: Column(
                                         children: [
