@@ -1,5 +1,3 @@
-
-import 'package:all_projects/New%20Project/screens/receive.dart';
 import 'package:flutter/material.dart';
 
 import '../Pages/exchange_screen.dart';

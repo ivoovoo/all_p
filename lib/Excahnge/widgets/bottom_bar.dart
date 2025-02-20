@@ -3,14 +3,12 @@ import 'package:all_projects/Learning%20app/widgets/main_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../CLOUD/app.dart';
 import '../../MOVIES/App.dart';
 import '../../Market app/widgets/main_bar.dart';
 import '../../Taxi/screens/login_page.dart';
 import '../../VPS/app.dart';
 import '../../Video Editor/UI/home.dart';
 import '../../Wallet/Components/home_bar.dart';
-import '../../Wallet/Screens/wallet.dart';
 
 class NavBar extends StatelessWidget {
   final int pageIndex;

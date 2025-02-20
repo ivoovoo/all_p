@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../CLOUD/app.dart';
 import '../../Excahnge/widgets/main_bar.dart';
 import '../../Learning app/widgets/main_bar.dart';
 import '../../MOVIES/App.dart';

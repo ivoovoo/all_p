@@ -2,7 +2,6 @@ import 'package:all_projects/Excahnge/widgets/main_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../CLOUD/app.dart';
 import '../../Learning app/widgets/main_bar.dart';
 import '../../MOVIES/App.dart';
 import '../../Taxi/screens/login_page.dart';
