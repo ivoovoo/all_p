@@ -1,8 +1,10 @@
 
 import 'package:all_projects/New%20Project/screens/browser.dart';
+import 'package:all_projects/New%20Project/screens/key_words.dart';
 import 'package:flutter/material.dart';
 
 
+import '../screens/receive.dart';
 import 'nav_bar.dart';
 import 'nav_model.dart';
 
@@ -29,14 +31,14 @@ class _MainScreenBrowserState extends State<MainScreenBrowser> {
         navKey: homeNavKey,
         page:  Browser(tab: 1,),
       ),
-      // NavModel(
-      //   navKey: searchNavKey,
-      //   page: const WordsPage(tab: 2),
-      // ),
-      // NavModel(
-      //   navKey: notificationsNavKey,
-      //   page: const TabPage(tab: 3),
-      // ),
+      NavModel(
+        navKey: searchNavKey,
+        page: const KeyWords(tab: 2),
+      ),
+      NavModel(
+        navKey: notificationsNavKey,
+        page: const Receive(tab: 3),
+      ),
       // NavModel(
       //   navKey: profileNavKey,
       //   page: const TabPage(tab: 4),

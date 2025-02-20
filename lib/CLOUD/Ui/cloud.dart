@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:all_projects/CLOUD/Ui/search_me.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
@@ -128,19 +129,27 @@ class _CloudState extends State<Cloud> {
                     ),
                   ),
                 ),
-                Container(
-                  width: 36,
-                  height: 36,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      width: 1,
-                      color: Colors.black.withOpacity(0.5),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SearchMe()),
+                    );
+                  },
+                  child: Container(
+                    width: 36,
+                    height: 36,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 1,
+                        color: Colors.black.withOpacity(0.5),
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
                     ),
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.white,
-                  ),
-                  child: Center(
-                    child: Icon(Icons.search),
+                    child: Center(
+                      child: Icon(Icons.search),
+                    ),
                   ),
                 ),
               ],

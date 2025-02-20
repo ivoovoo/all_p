@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Receive extends StatefulWidget {
-  const Receive({super.key});
+  final int tab;
+  const Receive({super.key, required this.tab});
 
   @override
   State<Receive> createState() => _ReceiveState();

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SendScreen extends StatefulWidget {
-  const SendScreen({super.key});
+  final int tab;
+
+  const SendScreen({super.key, required this.tab});
 
   @override
   State<SendScreen> createState() => _SendScreenState();

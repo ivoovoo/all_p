@@ -1,8 +1,11 @@
 
+import 'package:all_projects/New%20Project/screens/receive.dart';
 import 'package:flutter/material.dart';
 
 import '../Pages/exchange_screen.dart';
 import '../Pages/home.dart';
+import '../Pages/receive_screen.dart';
+import '../Pages/send_screen.dart';
 import 'bottom_bar.dart';
 import 'bottom_model.dart';
 
@@ -33,14 +36,14 @@ class _MainScreenExchangeState extends State<MainScreenExchange> {
         navKey: searchNavKey,
         page: const ExchangeScreen(tab: 2),
       ),
-      // NavModel(
-      //   navKey: notificationsNavKey,
-      //   page: const TabPage(tab: 3),
-      // ),
-      // NavModel(
-      //   navKey: profileNavKey,
-      //   page: const TabPage(tab: 4),
-      // ),
+      NavModel(
+        navKey: notificationsNavKey,
+        page: const ReceiveScreen(tab: 3),
+      ),
+      NavModel(
+        navKey: profileNavKey,
+        page: const SendScreen(tab: 4),
+      ),
     ];
   }
 

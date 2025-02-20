@@ -5,6 +5,7 @@ import 'package:all_projects/Wallet/Screens/profile.dart';
 import 'package:all_projects/Wallet/Screens/swap.dart';
 import 'package:all_projects/Wallet/Screens/wallet.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../CLOUD/app.dart';
 import '../../Learning app/widgets/main_bar.dart';
@@ -64,8 +65,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              HapticFeedback.lightImpact();
+                              _onItemTapped(0);
+                            },
                             onLongPress: () {
+                              HapticFeedback.heavyImpact();
+
                               showModalBottomSheet(
                                 context: context,
                                 builder: (BuildContext context) {
@@ -75,420 +81,426 @@ class _HomeScreenState extends State<HomeScreen> {
                                       padding:
                                           const EdgeInsets.only(bottom: 30.0),
                                       child: Column(
-                                        mainAxisSize: MainAxisSize.min,
                                         children: [
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              InkWell(
-                                                onTap: () {
-                                                  Navigator.pushReplacement(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            Login()),
-                                                  );
-                                                },
-                                                child: Column(
+                                          Expanded(
+                                            child: ListView(
+                                              // mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.spaceBetween,
                                                   children: [
-                                                    Container(
-                                                      width: 100,
-                                                      height: 100,
-                                                      decoration: BoxDecoration(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(20),
-                                                        gradient:
-                                                            LinearGradient(
-                                                          colors: [
-                                                            Colors.blue,
-                                                            Colors.amberAccent
-                                                          ],
-                                                          // Цвета градиента
-                                                          begin:
-                                                              Alignment.topLeft,
-                                                          // Начало градиента
-                                                          end: Alignment
-                                                              .bottomRight, // Конец градиента
-                                                        ),
+                                                    InkWell(
+                                                      onTap: () {
+                                                        Navigator.pushReplacement(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  Login()),
+                                                        );
+                                                      },
+                                                      child: Column(
+                                                        children: [
+                                                          Container(
+                                                            width: 100,
+                                                            height: 100,
+                                                            decoration: BoxDecoration(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(20),
+                                                              gradient:
+                                                                  LinearGradient(
+                                                                colors: [
+                                                                  Colors.blue,
+                                                                  Colors.amberAccent
+                                                                ],
+                                                                // Цвета градиента
+                                                                begin:
+                                                                    Alignment.topLeft,
+                                                                // Начало градиента
+                                                                end: Alignment
+                                                                    .bottomRight, // Конец градиента
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 10,
+                                                          ),
+                                                          Text(
+                                                            'TAXI',
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight.w400,
+                                                              fontSize: 14,
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
-                                                    SizedBox(
-                                                      height: 10,
+                                                    InkWell(
+                                                      onTap: () {
+                                                        Navigator.pushReplacement(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  MainScreenLearning()),
+                                                        );
+                                                      },
+                                                      child: Column(
+                                                        children: [
+                                                          Container(
+                                                            width: 100,
+                                                            height: 100,
+                                                            decoration: BoxDecoration(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(20),
+                                                              gradient:
+                                                                  LinearGradient(
+                                                                colors: [
+                                                                  Colors.green,
+                                                                  Colors.purpleAccent
+                                                                ],
+                                                                // Цвета градиента
+                                                                begin:
+                                                                    Alignment.topLeft,
+                                                                // Начало градиента
+                                                                end: Alignment
+                                                                    .bottomRight, // Конец градиента
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 10,
+                                                          ),
+                                                          Text(
+                                                            'LEARNING',
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight.w400,
+                                                              fontSize: 14,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
-                                                    Text(
-                                                      'TAXI',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        fontSize: 14,
+                                                    InkWell(
+                                                      onTap: () {
+                                                        Navigator.pushReplacement(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  HomeWidget()),
+                                                        );
+                                                      },
+                                                      child: Column(
+                                                        children: [
+                                                          Container(
+                                                            width: 100,
+                                                            height: 100,
+                                                            decoration: BoxDecoration(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(20),
+                                                              gradient:
+                                                                  LinearGradient(
+                                                                colors: [
+                                                                  Colors.redAccent,
+                                                                  Colors.amber
+                                                                ],
+                                                                // Цвета градиента
+                                                                begin:
+                                                                    Alignment.topLeft,
+                                                                // Начало градиента
+                                                                end: Alignment
+                                                                    .bottomRight, // Конец градиента
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 10,
+                                                          ),
+                                                          Text(
+                                                            'VIDEO EDITOR',
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight.w400,
+                                                              fontSize: 14,
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
                                                   ],
                                                 ),
-                                              ),
-                                              InkWell(
-                                                onTap: () {
-                                                  Navigator.pushReplacement(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            MainScreenLearning()),
-                                                  );
-                                                },
-                                                child: Column(
+                                                SizedBox(
+                                                  height: 10,
+                                                ),
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.spaceBetween,
                                                   children: [
-                                                    Container(
-                                                      width: 100,
-                                                      height: 100,
-                                                      decoration: BoxDecoration(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(20),
-                                                        gradient:
-                                                            LinearGradient(
-                                                          colors: [
-                                                            Colors.green,
-                                                            Colors.purpleAccent
-                                                          ],
-                                                          // Цвета градиента
-                                                          begin:
-                                                              Alignment.topLeft,
-                                                          // Начало градиента
-                                                          end: Alignment
-                                                              .bottomRight, // Конец градиента
-                                                        ),
+                                                    InkWell(
+                                                      onTap: () {
+                                                        Navigator.pushReplacement(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  MainScreenMarket()),
+                                                        );
+                                                      },
+                                                      child: Column(
+                                                        children: [
+                                                          Container(
+                                                            width: 100,
+                                                            height: 100,
+                                                            decoration: BoxDecoration(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(20),
+                                                              gradient:
+                                                                  LinearGradient(
+                                                                colors: [
+                                                                  Colors.orange,
+                                                                  Colors.pink
+                                                                ],
+                                                                // Цвета градиента
+                                                                begin:
+                                                                    Alignment.topLeft,
+                                                                // Начало градиента
+                                                                end: Alignment
+                                                                    .bottomRight, // Конец градиента
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 10,
+                                                          ),
+                                                          Text(
+                                                            'MARKET',
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight.w400,
+                                                              fontSize: 14,
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
-                                                    SizedBox(
-                                                      height: 10,
+                                                    InkWell(
+                                                      onTap: () {
+                                                        Navigator.pushReplacement(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  MainScreenExchange()),
+                                                        );
+                                                      },
+                                                      child: Column(
+                                                        children: [
+                                                          Container(
+                                                            width: 100,
+                                                            height: 100,
+                                                            decoration: BoxDecoration(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(20),
+                                                              gradient:
+                                                                  LinearGradient(
+                                                                colors: [
+                                                                  Colors.purple,
+                                                                  Colors.pink
+                                                                ],
+                                                                // Цвета градиента
+                                                                begin:
+                                                                    Alignment.topLeft,
+                                                                // Начало градиента
+                                                                end: Alignment
+                                                                    .bottomRight, // Конец градиента
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 10,
+                                                          ),
+                                                          Text(
+                                                            'EXCHANGE',
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight.w400,
+                                                              fontSize: 14,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
-                                                    Text(
-                                                      'LEARNING',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        fontSize: 14,
+                                                    InkWell(
+                                                      onTap: () {
+                                                        Navigator.pushReplacement(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  MainScreenLearning()),
+                                                        );
+                                                      },
+                                                      child: Column(
+                                                        children: [
+                                                          Container(
+                                                            width: 100,
+                                                            height: 100,
+                                                            decoration: BoxDecoration(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(20),
+                                                              gradient:
+                                                                  LinearGradient(
+                                                                colors: [
+                                                                  Colors.red,
+                                                                  Colors.yellow
+                                                                ],
+                                                                // Цвета градиента
+                                                                begin:
+                                                                    Alignment.topLeft,
+                                                                // Начало градиента
+                                                                end: Alignment
+                                                                    .bottomRight, // Конец градиента
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 10,
+                                                          ),
+                                                          Text(
+                                                            'LEARNING',
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight.w400,
+                                                              fontSize: 14,
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
                                                   ],
                                                 ),
-                                              ),
-                                              InkWell(
-                                                onTap: () {
-                                                  Navigator.pushReplacement(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            HomeWidget()),
-                                                  );
-                                                },
-                                                child: Column(
+                                                SizedBox(
+                                                  height: 20,
+                                                ),
+                                                Row(
+                                                  mainAxisAlignment:
+                                                  MainAxisAlignment.spaceBetween,
                                                   children: [
-                                                    Container(
-                                                      width: 100,
-                                                      height: 100,
-                                                      decoration: BoxDecoration(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(20),
-                                                        gradient:
-                                                            LinearGradient(
-                                                          colors: [
-                                                            Colors.redAccent,
-                                                            Colors.amber
-                                                          ],
-                                                          // Цвета градиента
-                                                          begin:
-                                                              Alignment.topLeft,
-                                                          // Начало градиента
-                                                          end: Alignment
-                                                              .bottomRight, // Конец градиента
-                                                        ),
+                                                    InkWell(
+                                                      onTap: () {
+                                                        // Navigator.pushReplacement(
+                                                        //   context,
+                                                        //   MaterialPageRoute(builder: (context) => CloudApp()),
+                                                        // );
+                                                      },
+                                                      child: Column(
+                                                        children: [
+                                                          Container(
+                                                            width: 100,
+                                                            height: 100,
+                                                            decoration: BoxDecoration(
+                                                              borderRadius:
+                                                              BorderRadius.circular(20),
+                                                              gradient: LinearGradient(
+                                                                colors: [Colors.orange, Colors.redAccent], // Цвета градиента
+                                                                begin: Alignment.topLeft, // Начало градиента
+                                                                end: Alignment.bottomRight, // Конец градиента
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 10,
+                                                          ),
+                                                          Text(
+                                                            'CLOUD',
+                                                            style: TextStyle(
+                                                              fontWeight: FontWeight.w400,
+                                                              fontSize: 14,
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
-                                                    SizedBox(
-                                                      height: 10,
+                                                    InkWell(
+                                                      onTap: () {
+                                                        Navigator.pushReplacement(
+                                                          context,
+                                                          MaterialPageRoute(builder: (context) => AppMovies()),
+                                                        );
+                                                      },
+                                                      child: Column(
+                                                        children: [
+                                                          Container(
+                                                            width: 100,
+                                                            height: 100,
+                                                            decoration: BoxDecoration(
+                                                              borderRadius:
+                                                              BorderRadius.circular(20),
+                                                              gradient: LinearGradient(
+                                                                colors: [Colors.lime, Colors.pink], // Цвета градиента
+                                                                begin: Alignment.topLeft, // Начало градиента
+                                                                end: Alignment.bottomRight, // Конец градиента
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 10,
+                                                          ),
+                                                          Text(
+                                                            'MOVIE',
+                                                            style: TextStyle(
+                                                              fontWeight: FontWeight.w400,
+                                                              fontSize: 14,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
-                                                    Text(
-                                                      'VIDEO EDITOR',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        fontSize: 14,
+                                                    InkWell(
+                                                      onTap: () {
+                                                        Navigator.pushReplacement(
+                                                          context,
+                                                          MaterialPageRoute(builder: (context) => AppVps()),
+                                                        );
+                                                      },
+                                                      child: Column(
+                                                        children: [
+                                                          Container(
+                                                            width: 100,
+                                                            height: 100,
+                                                            decoration: BoxDecoration(
+                                                              borderRadius:
+                                                              BorderRadius.circular(20),
+                                                              gradient: LinearGradient(
+                                                                colors: [Colors.amberAccent, Colors.green], // Цвета градиента
+                                                                begin: Alignment.topLeft, // Начало градиента
+                                                                end: Alignment.bottomRight, // Конец градиента
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 10,
+                                                          ),
+                                                          Text(
+                                                            'VPS',
+                                                            style: TextStyle(
+                                                              fontWeight: FontWeight.w400,
+                                                              fontSize: 14,
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
                                                   ],
                                                 ),
-                                              ),
-                                            ],
+                                                SizedBox(height: 20,),
+                                              ],
+                                            ),
                                           ),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              InkWell(
-                                                onTap: () {
-                                                  Navigator.pushReplacement(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            MainScreenMarket()),
-                                                  );
-                                                },
-                                                child: Column(
-                                                  children: [
-                                                    Container(
-                                                      width: 100,
-                                                      height: 100,
-                                                      decoration: BoxDecoration(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(20),
-                                                        gradient:
-                                                            LinearGradient(
-                                                          colors: [
-                                                            Colors.orange,
-                                                            Colors.pink
-                                                          ],
-                                                          // Цвета градиента
-                                                          begin:
-                                                              Alignment.topLeft,
-                                                          // Начало градиента
-                                                          end: Alignment
-                                                              .bottomRight, // Конец градиента
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    SizedBox(
-                                                      height: 10,
-                                                    ),
-                                                    Text(
-                                                      'MARKET',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        fontSize: 14,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              InkWell(
-                                                onTap: () {
-                                                  Navigator.pushReplacement(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            MainScreenExchange()),
-                                                  );
-                                                },
-                                                child: Column(
-                                                  children: [
-                                                    Container(
-                                                      width: 100,
-                                                      height: 100,
-                                                      decoration: BoxDecoration(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(20),
-                                                        gradient:
-                                                            LinearGradient(
-                                                          colors: [
-                                                            Colors.purple,
-                                                            Colors.pink
-                                                          ],
-                                                          // Цвета градиента
-                                                          begin:
-                                                              Alignment.topLeft,
-                                                          // Начало градиента
-                                                          end: Alignment
-                                                              .bottomRight, // Конец градиента
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    SizedBox(
-                                                      height: 10,
-                                                    ),
-                                                    Text(
-                                                      'EXCHANGE',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        fontSize: 14,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              InkWell(
-                                                onTap: () {
-                                                  Navigator.pushReplacement(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            MainScreenLearning()),
-                                                  );
-                                                },
-                                                child: Column(
-                                                  children: [
-                                                    Container(
-                                                      width: 100,
-                                                      height: 100,
-                                                      decoration: BoxDecoration(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(20),
-                                                        gradient:
-                                                            LinearGradient(
-                                                          colors: [
-                                                            Colors.red,
-                                                            Colors.yellow
-                                                          ],
-                                                          // Цвета градиента
-                                                          begin:
-                                                              Alignment.topLeft,
-                                                          // Начало градиента
-                                                          end: Alignment
-                                                              .bottomRight, // Конец градиента
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    SizedBox(
-                                                      height: 10,
-                                                    ),
-                                                    Text(
-                                                      'LEARNING',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        fontSize: 14,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                          SizedBox(
-                                            height: 20,
-                                          ),
-                                          Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              InkWell(
-                                                onTap: () {
-                                                  // Navigator.pushReplacement(
-                                                  //   context,
-                                                  //   MaterialPageRoute(builder: (context) => CloudApp()),
-                                                  // );
-                                                },
-                                                child: Column(
-                                                  children: [
-                                                    Container(
-                                                      width: 100,
-                                                      height: 100,
-                                                      decoration: BoxDecoration(
-                                                        borderRadius:
-                                                        BorderRadius.circular(20),
-                                                        gradient: LinearGradient(
-                                                          colors: [Colors.orange, Colors.redAccent], // Цвета градиента
-                                                          begin: Alignment.topLeft, // Начало градиента
-                                                          end: Alignment.bottomRight, // Конец градиента
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    SizedBox(
-                                                      height: 10,
-                                                    ),
-                                                    Text(
-                                                      'CLOUD',
-                                                      style: TextStyle(
-                                                        fontWeight: FontWeight.w400,
-                                                        fontSize: 14,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              InkWell(
-                                                onTap: () {
-                                                  Navigator.pushReplacement(
-                                                    context,
-                                                    MaterialPageRoute(builder: (context) => AppMovies()),
-                                                  );
-                                                },
-                                                child: Column(
-                                                  children: [
-                                                    Container(
-                                                      width: 100,
-                                                      height: 100,
-                                                      decoration: BoxDecoration(
-                                                        borderRadius:
-                                                        BorderRadius.circular(20),
-                                                        gradient: LinearGradient(
-                                                          colors: [Colors.lime, Colors.pink], // Цвета градиента
-                                                          begin: Alignment.topLeft, // Начало градиента
-                                                          end: Alignment.bottomRight, // Конец градиента
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    SizedBox(
-                                                      height: 10,
-                                                    ),
-                                                    Text(
-                                                      'MOVIE',
-                                                      style: TextStyle(
-                                                        fontWeight: FontWeight.w400,
-                                                        fontSize: 14,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              InkWell(
-                                                onTap: () {
-                                                  Navigator.pushReplacement(
-                                                    context,
-                                                    MaterialPageRoute(builder: (context) => AppVps()),
-                                                  );
-                                                },
-                                                child: Column(
-                                                  children: [
-                                                    Container(
-                                                      width: 100,
-                                                      height: 100,
-                                                      decoration: BoxDecoration(
-                                                        borderRadius:
-                                                        BorderRadius.circular(20),
-                                                        gradient: LinearGradient(
-                                                          colors: [Colors.amberAccent, Colors.green], // Цвета градиента
-                                                          begin: Alignment.topLeft, // Начало градиента
-                                                          end: Alignment.bottomRight, // Конец градиента
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    SizedBox(
-                                                      height: 10,
-                                                    ),
-                                                    Text(
-                                                      'VPS',
-                                                      style: TextStyle(
-                                                        fontWeight: FontWeight.w400,
-                                                        fontSize: 14,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                          SizedBox(height: 20,),
                                           Padding(
                                             padding: const EdgeInsets.symmetric(
                                               horizontal: 8.0,
@@ -504,8 +516,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 decoration: BoxDecoration(
                                                   color: Colors.black,
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          100),
+                                                  BorderRadius.circular(
+                                                      100),
                                                 ),
                                                 child: Center(
                                                   child: Text(
@@ -513,7 +525,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     style: TextStyle(
                                                       fontSize: 15,
                                                       fontWeight:
-                                                          FontWeight.w400,
+                                                      FontWeight.w400,
                                                       color: Colors.white,
                                                     ),
                                                   ),
@@ -531,15 +543,24 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Image.asset('assets/кошелек.png'),
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              HapticFeedback.lightImpact();
+                              _onItemTapped(1);
+                            },
                             child: Image.asset('assets/карта.png'),
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              HapticFeedback.lightImpact();
+                              _onItemTapped(2);
+                            },
                             child: Image.asset('assets/перевод.png'),
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              HapticFeedback.lightImpact();
+
+                            },
                             child: Image.asset('assets/la_signal.png'),
                           ),
                         ],

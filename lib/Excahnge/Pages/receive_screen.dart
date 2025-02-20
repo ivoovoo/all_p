@@ -2,7 +2,8 @@ import 'package:custom_sliding_segmented_control/custom_sliding_segmented_contro
 import 'package:flutter/material.dart';
 
 class ReceiveScreen extends StatefulWidget {
-  const ReceiveScreen({super.key});
+  final int tab;
+  const ReceiveScreen({super.key, required this.tab});
 
   @override
   State<ReceiveScreen> createState() => _ReceiveScreenState();

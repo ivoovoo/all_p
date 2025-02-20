@@ -3,6 +3,7 @@ import 'package:all_projects/Market%20app/widgets/main_bar.dart';
 import 'package:all_projects/Taxi/screens/login_page.dart';
 import 'package:all_projects/VPS/app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../Cryptology/widgets/main_bar.dart';
 import '../../Excahnge/widgets/main_bar.dart';
@@ -56,6 +57,8 @@ class NavBar extends StatelessWidget {
                                 children: [
                                   InkWell(
                                     onTap: () {
+                                      HapticFeedback.lightImpact();
+
                                       Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(builder: (context) => Login()),
@@ -91,6 +94,8 @@ class NavBar extends StatelessWidget {
                                   ),
                                   InkWell(
                                     onTap: () {
+                                      HapticFeedback.lightImpact();
+
                                       Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(builder: (context) => MainScreenCryptology()),
@@ -126,6 +131,8 @@ class NavBar extends StatelessWidget {
                                   ),
                                   InkWell(
                                     onTap: () {
+                                      HapticFeedback.lightImpact();
+
                                       Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(builder: (context) => HomeWidget()),
@@ -168,6 +175,8 @@ class NavBar extends StatelessWidget {
                                 children: [
                                   InkWell(
                                     onTap: () {
+                                      HapticFeedback.lightImpact();
+
                                       Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(builder: (context) => MainScreenMarket()),
@@ -203,6 +212,8 @@ class NavBar extends StatelessWidget {
                                   ),
                                   InkWell(
                                     onTap: () {
+                                      HapticFeedback.lightImpact();
+
                                       Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(builder: (context) => WalletScreen()),
@@ -238,6 +249,8 @@ class NavBar extends StatelessWidget {
                                   ),
                                   InkWell(
                                     onTap: () {
+                                      HapticFeedback.lightImpact();
+
                                       Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(builder: (context) => MainScreenExchange()),
@@ -280,6 +293,8 @@ class NavBar extends StatelessWidget {
                                 children: [
                                   InkWell(
                                     onTap: () {
+                                      HapticFeedback.lightImpact();
+
                                       // Navigator.pushReplacement(
                                       //   context,
                                       //   MaterialPageRoute(builder: (context) => CloudApp()),
@@ -315,6 +330,8 @@ class NavBar extends StatelessWidget {
                                   ),
                                   InkWell(
                                     onTap: () {
+                                      HapticFeedback.lightImpact();
+
                                       Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(builder: (context) => AppMovies()),
@@ -350,6 +367,8 @@ class NavBar extends StatelessWidget {
                                   ),
                                   InkWell(
                                     onTap: () {
+                                      HapticFeedback.lightImpact();
+
                                       Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(builder: (context) => AppVps()),
@@ -393,6 +412,8 @@ class NavBar extends StatelessWidget {
                                 ),
                                 child: InkWell(
                                   onTap: () {
+                                    HapticFeedback.lightImpact();
+
                                     Navigator.pop(context);
                                   },
                                   child: Container(
@@ -455,13 +476,29 @@ class NavBar extends StatelessWidget {
       {Function()? onTap, Function()? onLongPress}) {
     return Expanded(
       child: InkWell(
-        onTap: onTap,
-        onLongPress: onLongPress,
+        onTap: () {
+          // Trigger vibration feedback on tap
+          HapticFeedback.lightImpact();
+
+          // Call the provided onTap function, if any
+          if (onTap != null) {
+            onTap();
+          }
+        },
+        onLongPress: () {
+          // Trigger vibration feedback on long press
+          HapticFeedback.heavyImpact();
+
+          // Call the provided onLongPress function, if any
+          if (onLongPress != null) {
+            onLongPress();
+          }
+        },
         child: Icon(
           icon,
           color: isSelected
-              ? Color.fromRGBO(21, 0, 230, 1.0)
-              : Colors.white.withOpacity(0.5),
+              ? Color.fromRGBO(119, 71, 253, 1)
+              : Colors.black.withOpacity(0.5),
         ),
       ),
     );

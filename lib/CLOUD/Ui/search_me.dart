@@ -10,7 +10,7 @@ class SearchMe extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(
-            height: 50,
+            height: 70,
           ),
           Expanded(
             flex: 1,

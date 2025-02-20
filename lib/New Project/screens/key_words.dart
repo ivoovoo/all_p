@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class KeyWords extends StatefulWidget {
-  const KeyWords({super.key});
+  final int tab;
+  const KeyWords({super.key, required this.tab});
 
   @override
   State<KeyWords> createState() => _KeyWordsState();
